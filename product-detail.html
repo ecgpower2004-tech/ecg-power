@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - ECG Power</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .product-hero { position: relative; height: 320px; overflow: hidden; }
+    .product-hero img { width: 100%; height: 100%; object-fit: cover; }
+    .product-hero::after { content: ''; position: absolute; inset: 0; background: rgba(15,29,54,0.5); }
+    .product-hero-content { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
+    .product-hero-content h1 { font-size: 28px; font-weight: 900; color: #fff; text-align: center; letter-spacing: -0.02em; text-transform: uppercase; }
+    @media (min-width: 768px) { .product-hero-content h1 { font-size: 42px; } }
+
+    .brand-block { background: #1B2A4A; border-radius: 20px; padding: 32px; margin-bottom: 40px; }
+    .brand-logo-box { background: #fff; border-radius: 12px; padding: 24px; text-align: center; }
+    .brand-logo-box span { font-size: 24px; font-weight: 900; color: #1B2A4A; }
+    .brand-desc { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.8; margin-bottom: 20px; }
+    .brand-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: #1B2A4A; font-size: 12px; font-weight: 700; padding: 10px 24px; border-radius: 999px; transition: all 0.25s ease; }
+    .btn-white:hover { background: #F5F7FA; }
+
+    .tab-group { display: flex; gap: 0; }
+    .tab-btn { padding: 10px 28px; font-size: 13px; font-weight: 700; background: #E2E5EA; color: #5A6A7A; border-radius: 10px 10px 0 0; cursor: pointer; transition: all 0.2s ease; border: none; }
+    .tab-btn.active { background: #1B2A4A; color: #fff; }
+    .tab-btn:hover:not(.active) { background: #d0d4da; }
+
+    .sidebar-box { background: #F5F7FA; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .sidebar-box h3 { font-size: 14px; font-weight: 700; color: #1B2A4A; margin-bottom: 14px; }
+    .sidebar-form input, .sidebar-form textarea { width: 100%; padding: 10px 14px; margin-bottom: 10px; border: 1px solid #E2E5EA; border-radius: 8px; font-size: 13px; background: #fff; }
+    .sidebar-form input:focus, .sidebar-form textarea:focus { outline: none; border-color: #F26522; box-shadow: 0 0 0 3px rgba(242,101,34,0.1); }
+    .sidebar-form button { width: 100%; background: #F26522; color: #fff; font-size: 12px; font-weight: 700; padding: 10px; border-radius: 999px; border: none; cursor: pointer; transition: all 0.2s ease; }
+    .sidebar-form button:hover { background: #E85A1B; }
+
+    .other-brand-link { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 8px; transition: all 0.15s ease; }
+    .other-brand-link:hover { background: #F5F7FA; }
+    .other-brand-link span:first-child { font-size: 13px; font-weight: 600; color: #1B2A4A; }
+    .other-brand-link span:last-child { font-size: 11px; color: #5A6A7A; }
+  </style>
+</head>
+<body>
+
+<!-- Header (same as products.html, active on Products) -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></a>
+    <nav class="desktop-nav">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-btn">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        <div class="dropdown-menu">
+          <a href="products.html" class="dropdown-item">Engine Brand Series</a>
+          <a href="products.html" class="dropdown-item">Silent Enclosure Series</a>
+          <a href="products.html" class="dropdown-item">Alternator Series</a>
+          <a href="products.html" class="dropdown-item">Mobile / Trailer Gensets</a>
+          <a href="products.html" class="dropdown-item">HFO Gensets</a>
+          <a href="products.html" class="dropdown-item">Containerized Gensets</a>
+        </div>
+      </div>
+      <a href="products.html" class="nav-link active">Cummins</a>
+      <a href="products.html" class="nav-link">Perkins</a>
+      <a href="products.html" class="nav-link">Weichai</a>
+      <a href="products.html" class="nav-link">Isuzu</a>
+      <a href="products.html" class="nav-link">Doosan</a>
+      <a href="products.html" class="nav-link">Baudouin</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:flex btn btn-navy text-xs">REQUEST A QUOTE</a>
+      <button class="mobile-toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <div class="mobile-nav-header"><span class="font-bold text-navy">Menu</span><button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.remove('open');document.querySelector('.mobile-overlay').classList.remove('open');document.body.style.overflow='';" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+  <div class="mobile-nav-links">
+    <a href="products.html">Products</a><a href="products.html" class="sub-link">Cummins</a><a href="products.html" class="sub-link">Perkins</a><a href="products.html" class="sub-link">Weichai</a><a href="products.html" class="sub-link">Isuzu</a><a href="products.html" class="sub-link">Doosan</a><a href="products.html" class="sub-link">Baudouin</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-orange w-full mt-4">REQUEST A QUOTE</a>
+  </div>
+</div>
+
+<!-- Product Hero -->
+<div class="product-hero">
+  <img src="images/product-engine.jpg" alt="" id="hero-img">
+  <div class="product-hero-content"><h1 id="product-hero-title">Cummins Industrial Diesel Generators</h1></div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="container py-6">
+  <a href="products.html" class="inline-flex items-center text-sm text-gray hover:text-orange transition-colors">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    Back to Products
+  </a>
+</div>
+
+<!-- Brand Info Block -->
+<div class="container">
+  <div class="brand-block">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="md:w-1/4 flex items-center justify-center">
+        <div class="brand-logo-box w-full"><span id="product-logo">Cummins</span></div>
+      </div>
+      <div class="md:w-3/4">
+        <p class="brand-desc" id="product-desc">Cummins industrial generator sets deliver unmatched reliability and durability for critical operations. Designed for diverse applications from construction sites and data centers to home backup power.</p>
+        <div class="brand-actions">
+          <a href="contact.html" class="btn-white">CONTACT NOW</a>
+          <a href="https://wa.me/8618328339409" target="_blank" class="btn btn-whatsapp text-xs">WHATSAPP</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Table + Sidebar -->
+  <div class="flex flex-col lg:flex-row gap-8 mb-16">
+    <!-- Table -->
+    <div class="lg:w-3/4">
+      <div class="tab-group">
+        <button class="tab-btn active" data-hz="50" onclick="switchHz('50')">50Hz</button>
+        <button class="tab-btn" data-hz="60" onclick="switchHz('60')">60Hz</button>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead><tr>
+            <th>Model</th><th>Generator Power</th><th>Engine Model</th><th>Cylinder</th>
+          </tr></thead>
+          <tbody id="spec-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="lg:w-1/4 space-y-5">
+      <div class="sidebar-box">
+        <h3>Contact Now</h3>
+        <form class="sidebar-form inquiry-form" data-source="Product Detail Sidebar" id="sidebar-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" rows="3" placeholder="Message"></textarea>
+          <button type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+      <div class="sidebar-box bg-white border border-gray-200">
+        <h3>Other Brands</h3>
+        <div id="other-brands"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popular Products -->
+<section class="py-16 bg-gray-light">
+  <div class="container">
+    <div class="text-center mb-10 reveal"><h2 class="text-xl md:text-2xl font-extrabold text-navy tracking-tight">Popular Products</h2></div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <a href="product-detail.html?brand=cummins" class="pop-card reveal"><div class="img" style="aspect-ratio:1;overflow:hidden;background:#F5F7FA;"><img src="images/product-engine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div><p style="padding:10px;text-align:center;font-size:12px;font-weight:600;color:#1B2A4A;">Cummins 100KVA</p></a>
+      <a href="product-detail.html?brand=cummins" class="pop-card reveal"><div class="img" style="aspect-ratio:1;overflow:hidden;background:#F5F7FA;"><img src="images/product-engine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div><p style="padding:10px;text-align:center;font-size:12px;font-weight:600;color:#1B2A4A;">Cummins 200KVA</p></a>
+      <a href="product-detail.html?brand=cummins" class="pop-card reveal"><div class="img" style="aspect-ratio:1;overflow:hidden;background:#F5F7FA;"><img src="images/product-engine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div><p style="padding:10px;text-align:center;font-size:12px;font-weight:600;color:#1B2A4A;">Cummins 500KVA</p></a>
+      <a href="product-detail.html?brand=perkins" class="pop-card reveal"><div class="img" style="aspect-ratio:1;overflow:hidden;background:#F5F7FA;"><img src="images/product-engine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div><p style="padding:10px;text-align:center;font-size:12px;font-weight:600;color:#1B2A4A;">Perkins 80KVA</p></a>
+      <a href="product-detail.html?brand=perkins" class="pop-card reveal"><div class="img" style="aspect-ratio:1;overflow:hidden;background:#F5F7FA;"><img src="images/product-engine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div><p style="padding:10px;text-align:center;font-size:12px;font-weight:600;color:#1B2A4A;">Perkins 150KVA</p></a>
+      <a href="product-detail.html?brand=weichai" class="pop-card reveal"><div class="img" style="aspect-ratio:1;overflow:hidden;background:#F5F7FA;"><img src="images/product-engine.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div><p style="padding:10px;text-align:center;font-size:12px;font-weight:600;color:#1B2A4A;">Weichai 100KVA</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="footer-cta"><div class="container"><h2>Need a Diesel Generator Solution?</h2><p>Contact our sales engineers today for a free consultation.</p><div class="footer-cta-buttons"><a href="mailto:info@ecgpower.com" class="btn btn-navy">Email Us</a><a href="https://wa.me/8618328339409" target="_blank" class="btn btn-whatsapp">WhatsApp</a></div></div></div>
+<footer class="site-footer"><div class="footer-main"><div class="container"><div class="footer-grid"><div class="footer-col"><div class="logo mb-4"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></div><p>Industrial diesel generator manufacturer since 2004. CE, ISO9001 certified.</p></div><div class="footer-col"><h4>Products</h4><a href="products.html">Cummins Series</a><a href="products.html">Perkins Series</a><a href="products.html">Weichai Series</a><a href="products.html">Silent Enclosure</a></div><div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>No. 88, JinYing Road, Fu'an, Fujian, China</span></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+8618328339409">+86 183 2833 9409</a></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@ecgpower.com">info@ecgpower.com</a></div></div></div><div class="footer-bottom"><p>&copy; 2024 ECG Power. All Rights Reserved.</p><a href="admin.html">Admin Dashboard</a></div></div></div></footer>
+
+<!-- WhatsApp -->
+<div class="whatsapp-float"><span class="ring"></span><a href="https://wa.me/8618328339409" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-tooltip">Chat on WhatsApp</span></a></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

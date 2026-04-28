@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - ECG Power</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-card { background: #F5F7FA; border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.3s ease; }
+    .contact-card:hover { box-shadow: 0 4px 16px rgba(27,42,74,0.08); }
+    .contact-icon { width: 44px; height: 44px; border-radius: 50%; background: #FFF5F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon svg { width: 20px; height: 20px; color: #F26522; }
+    .contact-card h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; color: #5A6A7A; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .contact-card p, .contact-card a { font-size: 14px; font-weight: 600; color: #1B2A4A; }
+    .contact-card .sub { font-size: 12px; color: #5A6A7A; margin-top: 2px; }
+
+    .faq-item { border-bottom: 1px solid #E2E5EA; }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; font-size: 15px; font-weight: 600; color: #1B2A4A; cursor: pointer; transition: color 0.2s ease; }
+    .faq-question:hover { color: #F26522; }
+    .faq-question svg { width: 20px; height: 20px; color: #5A6A7A; transition: transform 0.3s ease; flex-shrink: 0; }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner { padding-bottom: 18px; font-size: 14px; color: #5A6A7A; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></a>
+    <nav class="desktop-nav">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-btn">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        <div class="dropdown-menu">
+          <a href="products.html" class="dropdown-item">Engine Brand Series</a>
+          <a href="products.html" class="dropdown-item">Silent Enclosure Series</a>
+          <a href="products.html" class="dropdown-item">Alternator Series</a>
+          <a href="products.html" class="dropdown-item">Mobile / Trailer Gensets</a>
+          <a href="products.html" class="dropdown-item">HFO Gensets</a>
+          <a href="products.html" class="dropdown-item">Containerized Gensets</a>
+        </div>
+      </div>
+      <a href="products.html" class="nav-link">Cummins</a><a href="products.html" class="nav-link">Perkins</a><a href="products.html" class="nav-link">Weichai</a><a href="products.html" class="nav-link">Isuzu</a><a href="products.html" class="nav-link">Doosan</a><a href="products.html" class="nav-link">Baudouin</a>
+      <a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link active">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:flex btn btn-navy text-xs">REQUEST A QUOTE</a>
+      <button class="mobile-toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <div class="mobile-nav-header"><span class="font-bold text-navy">Menu</span><button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.remove('open');document.querySelector('.mobile-overlay').classList.remove('open');document.body.style.overflow='';" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+  <div class="mobile-nav-links">
+    <a href="products.html">Products</a><a href="products.html" class="sub-link">Cummins</a><a href="products.html" class="sub-link">Perkins</a><a href="products.html" class="sub-link">Weichai</a><a href="products.html" class="sub-link">Isuzu</a><a href="products.html" class="sub-link">Doosan</a><a href="products.html" class="sub-link">Baudouin</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-orange w-full mt-4">REQUEST A QUOTE</a>
+  </div>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/hero-contact.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content container"><h1>Contact ECG Power</h1><p>Get in touch with our sales engineers for quotes, technical support, and partnership inquiries.</p></div>
+</div>
+
+<!-- Contact Content -->
+<section class="section-py bg-white">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row gap-12">
+      <!-- Info Cards -->
+      <div class="lg:w-[38%] space-y-4">
+        <div class="contact-card reveal">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <h4>Email Us</h4>
+            <a href="mailto:info@ecgpower.com">info@ecgpower.com</a>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <h4>Call or WhatsApp</h4>
+            <a href="tel:+8618328339409">+86 183 2833 9409</a>
+            <div class="sub">Available 24/7 for urgent inquiries</div>
+            <a href="https://wa.me/8618328339409" target="_blank" class="inline-flex items-center gap-2 mt-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition-all">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h4>Factory Address</h4>
+            <p>No. 88, JinYing Road, Fu'an City, Fujian Province, China</p>
+            <div class="sub">Export port: Ningde / Fuzhou</div>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div>
+            <h4>Business Hours</h4>
+            <p>Mon–Sat: 8:00–18:00 (GMT+8)</p>
+            <div class="sub">Sunday: Closed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:w-[62%]">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-gray-200 reveal">
+          <h3 class="text-lg font-bold text-navy mb-5">Send Us an Inquiry</h3>
+          <form class="inquiry-form" data-source="Contact Page Form" action="mailto:info@ecgpower.com" method="post" enctype="text/plain">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="form-label">First Name *</label>
+                <input type="text" name="firstName" class="form-input" placeholder="John" required>
+              </div>
+              <div>
+                <label class="form-label">Last Name *</label>
+                <input type="text" name="lastName" class="form-input" placeholder="Doe" required>
+              </div>
+              <div>
+                <label class="form-label">Email *</label>
+                <input type="email" name="email" class="form-input" placeholder="john@company.com" required>
+              </div>
+              <div class="flex gap-2">
+                <div style="width:90px">
+                  <label class="form-label">Code</label>
+                  <select name="countryCode" class="form-input" style="padding-left:8px;padding-right:8px">
+                    <option value="+1">+1</option><option value="+52">+52</option><option value="+55">+55</option><option value="+27">+27</option><option value="+234">+234</option><option value="+254">+254</option><option value="+86" selected>+86</option><option value="+44">+44</option>
+                  </select>
+                </div>
+                <div class="flex-1">
+                  <label class="form-label">Phone/WhatsApp *</label>
+                  <input type="tel" name="phone" class="form-input" placeholder="18328339409" required>
+                </div>
+              </div>
+              <div>
+                <label class="form-label">Country *</label>
+                <input type="text" name="country" class="form-input" placeholder="United States" required>
+              </div>
+              <div>
+                <label class="form-label">Company</label>
+                <input type="text" name="company" class="form-input" placeholder="ABC Corp">
+              </div>
+              <div>
+                <label class="form-label">Inquiry Reason</label>
+                <select name="inquiryReason" class="form-input">
+                  <option value="">Select reason</option>
+                  <option value="Product Inquiry">Product Inquiry</option>
+                  <option value="Service Inquiry">Service Inquiry</option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Get a Quote">Get a Quote</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Warranty">Warranty</option>
+                  <option value="General">General</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label">Industry</label>
+                <select name="industry" class="form-input">
+                  <option value="">Select industry</option>
+                  <option value="Construction">Construction</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Mining">Mining/Energy</option>
+                  <option value="Data Center">Data Center</option>
+                  <option value="Agriculture">Agriculture</option>
+                  <option value="Telecom">Telecom</option>
+                  <option value="Oil & Gas">Oil & Gas</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-5">
+              <label class="form-label">Message</label>
+              <textarea name="message" rows="4" class="form-input" placeholder="Tell us about your project requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-navy w-full">Send Inquiry</button>
+            <div class="form-success mt-4 p-4 bg-green-50 rounded-xl text-center hidden">
+              <div class="text-green-600 font-semibold mb-1">Thank you for your inquiry!</div>
+              <div class="text-green-500 text-sm">Our team will contact you within 24 hours.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-py bg-gray-light">
+  <div class="container">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy tracking-tight">Frequently Asked Questions</h2>
+    </div>
+    <div class="max-w-[800px] mx-auto">
+      <div class="faq-item reveal">
+        <div class="faq-question">What is your minimum order quantity?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Our standard MOQ is 1 unit for sample orders and 5 units for bulk production. We can accommodate smaller orders for first-time buyers to establish trust.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">How long is your delivery time?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Standard models: 7-15 working days. Custom configurations: 15-30 working days. Large containerized units may require 30-45 days.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Do you provide OEM services?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, we offer full OEM/ODM services including custom colors, branding, control panel customization, and specialized enclosures.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">What certifications do your products have?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-answer"><div class="faq-answer-inner">All products carry CE certification. We can also configure to meet EPA, CARB, ISO, and other regional standards upon request.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">Do you offer after-sales support?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, we provide technical documentation, video guides, spare parts supply, and remote technical support. For major projects, on-site engineer dispatch is available.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">What payment terms do you accept?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-answer"><div class="faq-answer-inner">We accept T/T (Telegraphic Transfer), L/C at sight for large orders, and Alibaba Trade Assurance for smaller orders.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="footer-cta"><div class="container"><h2>Need a Diesel Generator Solution?</h2><p>Contact our sales engineers today for a free consultation and competitive quote.</p><div class="footer-cta-buttons"><a href="mailto:info@ecgpower.com" class="btn btn-navy">Email Us</a><a href="https://wa.me/8618328339409" target="_blank" class="btn btn-whatsapp">WhatsApp</a></div></div></div>
+<footer class="site-footer"><div class="footer-main"><div class="container"><div class="footer-grid"><div class="footer-col"><div class="logo mb-4"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></div><p>Industrial diesel generator manufacturer since 2004. CE, ISO9001 certified.</p></div><div class="footer-col"><h4>Products</h4><a href="products.html">Cummins Series</a><a href="products.html">Perkins Series</a><a href="products.html">Weichai Series</a><a href="products.html">Silent Enclosure</a></div><div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>No. 88, JinYing Road, Fu'an, Fujian, China</span></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+8618328339409">+86 183 2833 9409</a></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@ecgpower.com">info@ecgpower.com</a></div></div></div><div class="footer-bottom"><p>&copy; 2024 ECG Power. All Rights Reserved.</p><a href="admin.html">Admin Dashboard</a></div></div></div></footer>
+
+<div class="whatsapp-float"><span class="ring"></span><a href="https://wa.me/8618328339409" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-tooltip">Chat on WhatsApp</span></a></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

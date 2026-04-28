@@ -1,12 +1,494 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ECG Power - Industrial Diesel Generator Manufacturer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECG Power - Chinese Diesel Generator Manufacturers</title>
+  <meta name="description" content="ECG Power designs and manufactures high-performance diesel generator sets from 5kVA to 5MW. Serving North America, Latin America, and Africa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Home-specific styles */
+    .hero-section { position: relative; height: calc(100vh - 68px); min-height: 540px; max-height: 780px; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; animation: slow-zoom 20s linear infinite alternate; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(15,29,54,0.45); }
+    .hero-panel { position: relative; z-index: 2; width: 100%; }
+    .hero-card { background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-radius: 60px 0 0 60px; padding: 48px 56px; max-width: 560px; margin-left: auto; box-shadow: 0 25px 80px rgba(0,0,0,0.15); }
+    @media (min-width: 768px) { .hero-card { border-radius: 80px 0 0 80px; padding: 60px 72px; max-width: 620px; } }
+    .hero-card h1 { font-size: 32px; font-weight: 900; color: #1B2A4A; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 20px; }
+    @media (min-width: 768px) { .hero-card h1 { font-size: 42px; } }
+    .hero-card p { font-size: 15px; color: #5A6A7A; line-height: 1.7; margin-bottom: 28px; }
+
+    /* Why Choose section */
+    .why-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 640px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+    .why-card { background: #fff; border-radius: 16px; padding: 32px 24px; text-align: center; border: 1px solid #E2E5EA; transition: all 0.3s ease; }
+    .why-card:hover { transform: translateY(-6px); box-shadow: 0 8px 32px rgba(27,42,74,0.12); }
+    .why-card .icon-wrap { width: 64px; height: 64px; border-radius: 50%; background: #FFF5F0; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .why-card .icon-wrap svg { width: 28px; height: 28px; color: #F26522; }
+    .why-card h3 { font-size: 16px; font-weight: 700; color: #1B2A4A; margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: #5A6A7A; line-height: 1.6; }
+
+    /* Looking for section */
+    .looking-section { background: #1B2A4A; padding: 80px 0; text-align: center; }
+    .looking-section h2 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .looking-section p { font-size: 15px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 28px; }
+
+    /* Application areas */
+    .app-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (min-width: 768px) { .app-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .app-grid { grid-template-columns: repeat(5, 1fr); } }
+    .app-card { background: #F5F7FA; border-radius: 16px; padding: 28px 20px; text-align: center; transition: all 0.3s ease; }
+    .app-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(27,42,74,0.08); }
+    .app-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 14px; }
+    .app-card h3 { font-size: 15px; font-weight: 700; color: #1B2A4A; margin-bottom: 6px; }
+    .app-card p { font-size: 12px; color: #5A6A7A; line-height: 1.5; }
+
+    /* Company strength */
+    .strength-check { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .strength-check .check { width: 22px; height: 22px; border-radius: 50%; background: #FFF5F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .strength-check .check svg { width: 14px; height: 14px; color: #F26522; }
+    .strength-check span { font-size: 14px; color: #1B2A4A; }
+
+    /* Generator sets grid */
+    .gen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (min-width: 768px) { .gen-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .gen-grid { grid-template-columns: repeat(5, 1fr); } }
+    .gen-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #E2E5EA; transition: all 0.3s ease; }
+    .gen-card:hover { transform: translateY(-6px); box-shadow: 0 8px 32px rgba(27,42,74,0.12); }
+    .gen-card .img-wrap { height: 180px; overflow: hidden; background: #F5F7FA; }
+    .gen-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .gen-card:hover .img-wrap img { transform: scale(1.05); }
+    .gen-card .content { padding: 20px; text-align: center; }
+    .gen-card h3 { font-size: 15px; font-weight: 700; color: #1B2A4A; margin-bottom: 6px; }
+    .gen-card p { font-size: 12px; color: #5A6A7A; line-height: 1.5; margin-bottom: 12px; }
+    .gen-card a { font-size: 12px; font-weight: 700; color: #F26522; display: inline-flex; align-items: center; gap: 4px; }
+    .gen-card a:hover { text-decoration: underline; }
+
+    /* Fuel solutions */
+    .fuel-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px 28px; transition: all 0.3s ease; }
+    .fuel-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+    .fuel-card .icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(242,101,34,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .fuel-card .icon svg { width: 24px; height: 24px; color: #F26522; }
+    .fuel-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .fuel-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    /* Brand logos */
+    .brand-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px 40px; }
+    .brand-row span { font-size: 15px; font-weight: 700; color: #1B2A4A; opacity: 0.45; transition: all 0.3s ease; cursor: default; }
+    .brand-row span:hover { opacity: 1; }
+
+    /* News cards */
+    .news-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #E2E5EA; transition: all 0.3s ease; }
+    .news-card:hover { transform: translateY(-6px); box-shadow: 0 8px 32px rgba(27,42,74,0.12); }
+    .news-card .img-wrap { height: 200px; overflow: hidden; }
+    .news-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .news-card:hover .img-wrap img { transform: scale(1.05); }
+    .news-card .content { padding: 24px; }
+    .news-card .badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #F26522; background: #FFF5F0; padding: 4px 10px; border-radius: 6px; margin-bottom: 10px; }
+    .news-card h3 { font-size: 16px; font-weight: 700; color: #1B2A4A; line-height: 1.4; margin-bottom: 8px; }
+    .news-card h3:hover { color: #F26522; }
+    .news-card p { font-size: 13px; color: #5A6A7A; line-height: 1.6; }
+
+    /* Inquiry form section */
+    .inquiry-section { background: #1B2A4A; padding: 80px 0; }
+    .inquiry-form-card { background: #fff; border-radius: 20px; padding: 36px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-ecg">ECG</span><span class="logo-power">Power</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-btn">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        <div class="dropdown-menu">
+          <a href="products.html" class="dropdown-item">Engine Brand Series</a>
+          <a href="products.html" class="dropdown-item">Silent Enclosure Series</a>
+          <a href="products.html" class="dropdown-item">Alternator Series</a>
+          <a href="products.html" class="dropdown-item">Mobile / Trailer Gensets</a>
+          <a href="products.html" class="dropdown-item">HFO Gensets</a>
+          <a href="products.html" class="dropdown-item">Containerized Gensets</a>
+        </div>
+      </div>
+      <a href="products.html" class="nav-link">Cummins</a>
+      <a href="products.html" class="nav-link">Perkins</a>
+      <a href="products.html" class="nav-link">Weichai</a>
+      <a href="products.html" class="nav-link">Isuzu</a>
+      <a href="products.html" class="nav-link">Doosan</a>
+      <a href="products.html" class="nav-link">Baudouin</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:flex btn btn-navy text-xs">REQUEST A QUOTE</a>
+      <button class="mobile-toggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <div class="mobile-nav-header">
+    <span class="font-bold text-navy">Menu</span>
+    <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.remove('open');document.querySelector('.mobile-overlay').classList.remove('open');document.body.style.overflow='';" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="products.html">Products</a>
+    <a href="products.html" class="sub-link">Cummins</a>
+    <a href="products.html" class="sub-link">Perkins</a>
+    <a href="products.html" class="sub-link">Weichai</a>
+    <a href="products.html" class="sub-link">Isuzu</a>
+    <a href="products.html" class="sub-link">Doosan</a>
+    <a href="products.html" class="sub-link">Baudouin</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-orange w-full mt-4">REQUEST A QUOTE</a>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-section">
+  <div class="hero-bg">
+    <img src="images/hero-home.jpg" alt="Diesel Generator Factory">
+  </div>
+  <div class="hero-panel">
+    <div class="container">
+      <div class="hero-card reveal">
+        <h1>Chinese Diesel Generator Manufacturers</h1>
+        <p>ECG Power designs and manufactures high-performance industrial diesel generator sets for critical backup and prime power applications. We specialize in fully customizable solutions, integrating top-tier diesel engines and alternators.</p>
+        <a href="contact.html" class="btn btn-navy">Get Your Custom Power Solution</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE ECG ===== -->
+<section class="section-py bg-white">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <span class="text-xs font-bold text-orange uppercase tracking-widest">Why Choose ECG</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy mt-3 tracking-tight">Why Choose ECG Power?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Comprehensive Product Range</h3>
+        <p>We offer a diverse selection of high-quality products across various categories.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Global Market Reach</h3>
+        <p>Our products are trusted by customers across multiple continents.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <h3>OEM/ODM Solutions</h3>
+        <p>We provide tailored manufacturing solutions to meet your specific brand requirements.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Dedicated Support Team</h3>
+        <p>Our expert team is committed to providing exceptional pre-sale and after-sale support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOOKING FOR ===== -->
+<section class="looking-section">
+  <div class="container">
+    <div class="reveal">
+      <h2>Are You Looking For?</h2>
+      <p>A Reliable Diesel Generator Manufacturer That Offers OEM/ODM Solutions?</p>
+      <a href="contact.html" class="btn btn-orange">Contact Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPLICATION AREAS ===== -->
+<section class="section-py bg-white">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy tracking-tight">What Application Area Are You In?</h2>
+      <p class="text-gray mt-3 max-w-2xl mx-auto">Our generators power critical operations across every industry.</p>
+    </div>
+    <div class="app-grid">
+      <div class="app-card reveal">
+        <img src="images/app-datacenter.jpg" alt="Data Center">
+        <h3>Data Center</h3>
+        <p>Uninterruptible backup power for 24/7 operations</p>
+      </div>
+      <div class="app-card reveal">
+        <img src="images/app-mining.jpg" alt="Mining">
+        <h3>Mining & Energy</h3>
+        <p>Ruggedized generators for extreme environments</p>
+      </div>
+      <div class="app-card reveal">
+        <img src="images/app-construction.jpg" alt="Construction">
+        <h3>Construction</h3>
+        <p>Mobile power solutions for heavy machinery</p>
+      </div>
+      <div class="app-card reveal">
+        <img src="images/app-factory.jpg" alt="Manufacturing">
+        <h3>Manufacturing</h3>
+        <p>High-capacity systems for facility protection</p>
+      </div>
+      <div class="app-card reveal">
+        <img src="images/app-hospital.jpg" alt="Hospital">
+        <h3>Hospital</h3>
+        <p>Instant stable power for life-support systems</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY STRENGTH ===== -->
+<section class="section-py bg-gray-light">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+      <div class="lg:w-1/2 reveal">
+        <span class="text-xs font-bold text-orange uppercase tracking-widest">Company Strength</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-navy mt-3 mb-6 tracking-tight">Why Choose ECG Power</h2>
+        <p class="text-gray leading-relaxed mb-6">Since 2004, ECG Power has been a globally recognized manufacturer of robust diesel generator sets. Based in Fu'an, Fujian — China's motor city — we combine advanced engineering with cost-effective manufacturing.</p>
+        <div class="strength-check"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>TUV CE, SGS, ISO9001 certified quality management</span></div>
+        <div class="strength-check"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Dedicated R&D team with 80+ expert engineers</span></div>
+        <div class="strength-check"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Pre-sale, sale, and post-sale professional support</span></div>
+        <div class="strength-check"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>OEM/ODM services with your branding available</span></div>
+        <div class="strength-check"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span>Fast delivery: 7-15 working days for standard models</span></div>
+        <a href="about.html" class="btn btn-outline mt-6">Learn About Us</a>
+      </div>
+      <div class="lg:w-1/2 reveal">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-xl overflow-hidden shadow-card"><img src="images/factory-1.jpg" alt="Factory" class="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"></div>
+          <div class="rounded-xl overflow-hidden shadow-card"><img src="images/factory-2.jpg" alt="Testing" class="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"></div>
+          <div class="rounded-xl overflow-hidden shadow-card"><img src="images/factory-3.jpg" alt="Assembly" class="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"></div>
+          <div class="rounded-xl overflow-hidden shadow-card"><img src="images/factory-4.jpg" alt="Shipping" class="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIESEL GENERATOR SETS ===== -->
+<section class="section-py bg-white">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy tracking-tight">Diesel Generator Sets</h2>
+      <p class="text-gray mt-3 max-w-2xl mx-auto">Premium power solutions for every application and environment.</p>
+    </div>
+    <div class="gen-grid">
+      <div class="gen-card reveal">
+        <div class="img-wrap"><img src="images/product-engine.jpg" alt="Engine Brand"></div>
+        <div class="content">
+          <h3>Engine Brand Series</h3>
+          <p>Custom-built gensets featuring globally renowned engines</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="gen-card reveal">
+        <div class="img-wrap"><img src="images/product-silent.jpg" alt="Silent Enclosure"></div>
+        <div class="content">
+          <h3>Silent Enclosure Series</h3>
+          <p>Acoustic enclosures for industrial and urban environments</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="gen-card reveal">
+        <div class="img-wrap"><img src="images/product-alternator.jpg" alt="Alternator"></div>
+        <div class="content">
+          <h3>Alternator Series</h3>
+          <p>High-efficiency alternators for reliable power output</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="gen-card reveal">
+        <div class="img-wrap"><img src="images/product-trailer.jpg" alt="Mobile"></div>
+        <div class="content">
+          <h3>Mobile / Trailer Gensets</h3>
+          <p>Versatile portable power with integrated trailers</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="gen-card reveal">
+        <div class="img-wrap"><img src="images/product-hfo.jpg" alt="HFO"></div>
+        <div class="content">
+          <h3>HFO Gensets</h3>
+          <p>Heavy fuel oil generators for maximum economy</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MULTI-FUEL ===== -->
+<section class="section-py bg-navy">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Multi-Fuel Solutions</h2>
+      <p class="text-white/60 mt-3 max-w-2xl mx-auto">Maximize efficiency with our adaptable generator technologies.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="fuel-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div>
+        <h3>Diesel Generators</h3>
+        <p>Quick-starting and highly reliable for mission-critical standby and prime power.</p>
+      </div>
+      <div class="fuel-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-2.4-2.5-3.5-2.5a3.5 3.5 0 0 0-3.5 3.5c0 1.5.8 2.6 1.8 3.3"/><path d="M12 18c0-1.5-.5-2.8-1-4"/><path d="M12 18c0 1.5.5 2.8 1 4"/><path d="M12 18c-1.5 0-2.8.5-4 1"/><path d="M12 18c1.5 0 2.8.5 4 1"/><path d="M15.5 14.5A2.5 2.5 0 0 1 13 12c0-1.38.5-2 1-3 1.072-2.143 2.4-2.5 3.5-2.5a3.5 3.5 0 0 1 3.5 3.5c0 1.5-.8 2.6-1.8 3.3"/></svg></div>
+        <h3>Gas Generators</h3>
+        <p>Eco-friendly and highly efficient with lower emissions.</p>
+      </div>
+      <div class="fuel-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 1.49-6"/><path d="M10 16V9c0-2.2 1.8-4 4-4s4 1.8 4 4v7"/><path d="M17 16v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-1.49-6"/></svg></div>
+        <h3>HFO Power Plants</h3>
+        <p>Exceptional cost-efficiency for large-scale industrial demands.</p>
+      </div>
+      <div class="fuel-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Turbine Solutions</h3>
+        <p>High-density power generation for demanding heavy industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRAND PARTNERS ===== -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-xl md:text-2xl font-bold text-navy tracking-tight">Our Strategic Partners</h2>
+    </div>
+    <div class="brand-row reveal">
+      <span>Cummins</span><span>Perkins</span><span>Weichai</span><span>Isuzu</span>
+      <span>Doosan</span><span>Baudouin</span><span>Deutz</span><span>Kubota</span>
+      <span>SDEC</span><span>Volvo</span><span>Stamford</span><span>Leroy-Somer</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWS ===== -->
+<section class="section-py bg-gray-light">
+  <div class="container">
+    <div class="text-center mb-14 reveal">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-navy tracking-tight">News & Insights</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="news.html" class="news-card reveal">
+        <div class="img-wrap"><img src="images/hero-news.jpg" alt="Data Center Guide"></div>
+        <div class="content">
+          <span class="badge">Guide</span>
+          <h3>Data Center Diesel Generator Selection Guide</h3>
+          <p class="line-clamp-2">When selecting a data center diesel generator, we look at power needs, regulatory requirements...</p>
+        </div>
+      </a>
+      <a href="news.html" class="news-card reveal">
+        <div class="img-wrap"><img src="images/app-hospital.jpg" alt="Hospital"></div>
+        <div class="content">
+          <span class="badge">Healthcare</span>
+          <h3>Hospital Generator Buying Guide: What You Need to Know</h3>
+          <p class="line-clamp-2">Reliable generator selection for healthcare facilities requires prioritizing compliance...</p>
+        </div>
+      </a>
+      <a href="news.html" class="news-card reveal">
+        <div class="img-wrap"><img src="images/hero-products.jpg" alt="Pricing"></div>
+        <div class="content">
+          <span class="badge">Market</span>
+          <h3>Top 5 Factors Affecting 1MW Diesel Generator Prices in 2026</h3>
+          <p class="line-clamp-2">Understanding key variables that influence industrial generator pricing helps procurement...</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER CTA ===== -->
+<div class="footer-cta">
+  <div class="container">
+    <h2>Need a Diesel Generator Solution?</h2>
+    <p>Contact our sales engineers today for a free consultation and competitive quote. We respond within 24 hours.</p>
+    <div class="footer-cta-buttons">
+      <a href="mailto:info@ecgpower.com" class="btn btn-navy">Email Us</a>
+      <a href="https://wa.me/8618328339409" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo mb-4"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></div>
+          <p>Industrial diesel generator manufacturer since 2004. CE, ISO9001 certified. Exporting to 160+ countries from Fu'an, Fujian, China.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="products.html">Data Center Power</a>
+          <a href="products.html">Mining & Energy</a>
+          <a href="products.html">Construction Sites</a>
+          <a href="products.html">Manufacturing</a>
+          <a href="products.html">Hospital Emergency</a>
+          <a href="products.html">Custom Solutions</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="products.html">Cummins Series</a>
+          <a href="products.html">Perkins Series</a>
+          <a href="products.html">Weichai Series</a>
+          <a href="products.html">Silent Enclosure</a>
+          <a href="products.html">Containerized</a>
+          <a href="products.html">Mobile Trailer</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>No. 88, JinYing Road, Fu'an City, Fujian, China</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+8618328339409">+86 183 2833 9409</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@ecgpower.com">info@ecgpower.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 ECG Power. All Rights Reserved.</p>
+        <a href="admin.html">Admin Dashboard</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<div class="whatsapp-float">
+  <span class="ring"></span>
+  <a href="https://wa.me/8618328339409" target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
 </html>

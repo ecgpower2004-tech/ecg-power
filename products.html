@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - ECG Power</title>
+  <meta name="description" content="Browse our complete range of diesel generator sets, silent enclosures, and alternators. All products available with OEM customization.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cat-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 768px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+    .cat-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #E2E5EA; transition: all 0.3s ease; }
+    .cat-card:hover { transform: translateY(-6px); box-shadow: 0 8px 32px rgba(27,42,74,0.12); }
+    .cat-card .img { aspect-ratio: 4/3; overflow: hidden; background: #F5F7FA; }
+    .cat-card .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .cat-card:hover .img img { transform: scale(1.05); }
+    .cat-card .body { padding: 20px; text-align: center; }
+    .cat-card h3 { font-size: 16px; font-weight: 700; color: #1B2A4A; margin-bottom: 8px; }
+    .cat-card p { font-size: 13px; color: #5A6A7A; line-height: 1.6; margin-bottom: 12px; }
+    .cat-card a { font-size: 12px; font-weight: 700; color: #F26522; }
+    .cat-card a:hover { text-decoration: underline; }
+
+    .brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    @media (min-width: 640px) { .brand-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .brand-grid { grid-template-columns: repeat(6, 1fr); } }
+    .brand-card { background: #fff; border-radius: 12px; padding: 20px 16px; border: 1px solid #E2E5EA; text-align: center; transition: all 0.3s ease; }
+    .brand-card:hover { border-color: #F26522; box-shadow: 0 4px 16px rgba(27,42,74,0.08); }
+    .brand-card h4 { font-size: 15px; font-weight: 700; color: #1B2A4A; margin-bottom: 2px; }
+    .brand-card span { font-size: 11px; color: #5A6A7A; }
+    .brand-card .link { font-size: 11px; font-weight: 700; color: #F26522; opacity: 0; transition: opacity 0.3s ease; }
+    .brand-card:hover .link { opacity: 1; }
+
+    .pop-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (min-width: 640px) { .pop-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .pop-grid { grid-template-columns: repeat(4, 1fr); } }
+    .pop-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #E2E5EA; transition: all 0.3s ease; }
+    .pop-card:hover { border-color: #F26522; }
+    .pop-card .img { aspect-ratio: 1; overflow: hidden; background: #F5F7FA; }
+    .pop-card .img img { width: 100%; height: 100%; object-fit: cover; }
+    .pop-card p { padding: 10px; text-align: center; font-size: 12px; font-weight: 600; color: #1B2A4A; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></a>
+    <nav class="desktop-nav">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-btn">Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
+        <div class="dropdown-menu">
+          <a href="products.html" class="dropdown-item">Engine Brand Series</a>
+          <a href="products.html" class="dropdown-item">Silent Enclosure Series</a>
+          <a href="products.html" class="dropdown-item">Alternator Series</a>
+          <a href="products.html" class="dropdown-item">Mobile / Trailer Gensets</a>
+          <a href="products.html" class="dropdown-item">HFO Gensets</a>
+          <a href="products.html" class="dropdown-item">Containerized Gensets</a>
+        </div>
+      </div>
+      <a href="products.html" class="nav-link active">Cummins</a>
+      <a href="products.html" class="nav-link">Perkins</a>
+      <a href="products.html" class="nav-link">Weichai</a>
+      <a href="products.html" class="nav-link">Isuzu</a>
+      <a href="products.html" class="nav-link">Doosan</a>
+      <a href="products.html" class="nav-link">Baudouin</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:flex btn btn-navy text-xs">REQUEST A QUOTE</a>
+      <button class="mobile-toggle" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <div class="mobile-nav-header"><span class="font-bold text-navy">Menu</span><button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.remove('open');document.querySelector('.mobile-overlay').classList.remove('open');document.body.style.overflow='';" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+  <div class="mobile-nav-links">
+    <a href="products.html">Products</a>
+    <a href="products.html" class="sub-link">Cummins</a><a href="products.html" class="sub-link">Perkins</a><a href="products.html" class="sub-link">Weichai</a><a href="products.html" class="sub-link">Isuzu</a><a href="products.html" class="sub-link">Doosan</a><a href="products.html" class="sub-link">Baudouin</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-orange w-full mt-4">REQUEST A QUOTE</a>
+  </div>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/hero-products.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content container">
+    <h1>Products</h1>
+    <p>Browse our complete range of diesel generator sets, silent enclosures, and alternators. All products available with OEM customization and global shipping.</p>
+  </div>
+</div>
+
+<!-- Categories -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="text-center mb-10 reveal">
+      <span class="text-xs font-bold text-orange uppercase tracking-widest">Reliable Industrial Diesel Power Solutions</span>
+      <h2 class="text-xl md:text-2xl font-extrabold text-navy mt-3 tracking-tight">Premium Diesel Generator Sets &amp; Custom Solutions</h2>
+      <p class="text-gray mt-3 max-w-3xl mx-auto text-sm">ECG Power designs and manufactures high-performance industrial diesel generator sets for critical backup and prime power applications.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card reveal">
+        <div class="img"><img src="images/product-engine.jpg" alt="Engine Brand"></div>
+        <div class="body">
+          <h3>Engine Brand Series</h3>
+          <p>Custom-built diesel generator sets featuring globally renowned diesel engines.</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="cat-card reveal">
+        <div class="img"><img src="images/product-silent.jpg" alt="Silent"></div>
+        <div class="body">
+          <h3>Silent Enclosure Series</h3>
+          <p>Acoustic enclosures for industrial and urban environments.</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="cat-card reveal">
+        <div class="img"><img src="images/product-alternator.jpg" alt="Alternator"></div>
+        <div class="body">
+          <h3>Alternator Series</h3>
+          <p>High-efficiency alternators for reliable power output.</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="cat-card reveal">
+        <div class="img"><img src="images/product-trailer.jpg" alt="Trailer"></div>
+        <div class="body">
+          <h3>Mobile / Trailer Gensets</h3>
+          <p>Versatile portable power with integrated trailers.</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="cat-card reveal">
+        <div class="img"><img src="images/product-hfo.jpg" alt="HFO"></div>
+        <div class="body">
+          <h3>HFO Gensets</h3>
+          <p>Heavy fuel oil generators for maximum economy.</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+      <div class="cat-card reveal">
+        <div class="img"><img src="images/product-container.jpg" alt="Container"></div>
+        <div class="body">
+          <h3>Containerized Gensets</h3>
+          <p>20GP/40HQ containerized power solutions.</p>
+          <a href="products.html">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Engine Brands -->
+<section class="py-16 bg-gray-light">
+  <div class="container">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-xl md:text-2xl font-extrabold text-navy tracking-tight">Diesel Generator by Engine Brand</h2>
+      <p class="text-gray mt-2 text-sm">Click any brand to view full specifications.</p>
+    </div>
+    <div class="brand-grid">
+      <a href="product-detail.html?brand=cummins" class="brand-card reveal"><h4>Cummins</h4><span>20kVA – 3363kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=perkins" class="brand-card reveal"><h4>Perkins</h4><span>8kVA – 2500kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=weichai" class="brand-card reveal"><h4>Weichai</h4><span>15kVA – 1000kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=isuzu" class="brand-card reveal"><h4>Isuzu</h4><span>10kVA – 50kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=doosan" class="brand-card reveal"><h4>Doosan</h4><span>60kVA – 750kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=volvo" class="brand-card reveal"><h4>Volvo</h4><span>85kVA – 700kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=kubota" class="brand-card reveal"><h4>Kubota</h4><span>8kVA – 50kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=deutz" class="brand-card reveal"><h4>Deutz</h4><span>15kVA – 500kVA</span><span class="link">View Specs &rarr;</span></a>
+      <a href="product-detail.html?brand=baudouin" class="brand-card reveal"><h4>Baudouin</h4><span>100kVA – 3363kVA</span><span class="link">View Specs &rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Popular Products -->
+<section class="py-16 bg-white">
+  <div class="container">
+    <div class="text-center mb-10 reveal">
+      <h2 class="text-xl md:text-2xl font-extrabold text-navy tracking-tight">Popular Products</h2>
+    </div>
+    <div class="pop-grid">
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Cummins 100KVA"></div><p>Cummins 100KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Cummins 200KVA"></div><p>Cummins 200KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Cummins 500KVA"></div><p>Cummins 500KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Perkins 80KVA"></div><p>Perkins 80KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Perkins 150KVA"></div><p>Perkins 150KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Weichai 100KVA"></div><p>Weichai 100KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Weichai 200KVA"></div><p>Weichai 200KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-engine.jpg" alt="Weichai 500KVA"></div><p>Weichai 500KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-silent.jpg" alt="Silent 50KVA"></div><p>Silent 50KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-silent.jpg" alt="Silent 100KVA"></div><p>Silent 100KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-silent.jpg" alt="Silent 200KVA"></div><p>Silent 200KVA</p></div>
+      <div class="pop-card reveal"><div class="img"><img src="images/product-silent.jpg" alt="Silent 300KVA"></div><p>Silent 300KVA</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="footer-cta"><div class="container"><h2>Need a Diesel Generator Solution?</h2><p>Contact our sales engineers today for a free consultation and competitive quote.</p><div class="footer-cta-buttons"><a href="mailto:info@ecgpower.com" class="btn btn-navy">Email Us</a><a href="https://wa.me/8618328339409" target="_blank" class="btn btn-whatsapp">WhatsApp</a></div></div></div>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><div class="logo mb-4"><span class="logo-ecg">ECG</span><span class="logo-power">Power</span></div><p>Industrial diesel generator manufacturer since 2004. CE, ISO9001 certified. Exporting to 160+ countries from Fu'an, Fujian, China.</p></div>
+        <div class="footer-col"><h4>Services</h4><a href="products.html">Data Center Power</a><a href="products.html">Mining & Energy</a><a href="products.html">Construction Sites</a><a href="products.html">Manufacturing</a><a href="products.html">Hospital Emergency</a><a href="products.html">Custom Solutions</a></div>
+        <div class="footer-col"><h4>Products</h4><a href="products.html">Cummins Series</a><a href="products.html">Perkins Series</a><a href="products.html">Weichai Series</a><a href="products.html">Silent Enclosure</a><a href="products.html">Containerized</a><a href="products.html">Mobile Trailer</a></div>
+        <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>No. 88, JinYing Road, Fu'an City, Fujian, China</span></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+8618328339409">+86 183 2833 9409</a></div><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@ecgpower.com">info@ecgpower.com</a></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 ECG Power. All Rights Reserved.</p><a href="admin.html">Admin Dashboard</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<div class="whatsapp-float"><span class="ring"></span><a href="https://wa.me/8618328339409" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-tooltip">Chat on WhatsApp</span></a></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
